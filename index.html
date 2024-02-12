@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Generatore di numeri casuali</title>
+<style>
+    /* Stile per il body */
+    body {
+        background-color: beige; /* Imposta il colore di sfondo del body su bianco */
+    }
+    
+    /* Stile per la frase */
+    #numeroCasuale {
+        color: red; /* Imposta il colore del testo su rosso */
+        text-align: center;
+        text-size-adjust: 20px;
+    }
+</style>
+<script>
+    function generaNumeroCasuale() {
+        // Otteniamo il numero scelto dal cliente
+        var limiteSuperiore = parseInt(document.getElementById("limiteSuperiore").value);
+        
+        // Generiamo un numero casuale compreso tra 1 e il limite superiore scelto
+        var numeroCasuale = Math.floor(Math.random() * limiteSuperiore) + 1;
+        
+        // Definiamo le frasi associate ai numeri
+        var frase;
+        switch (numeroCasuale) {
+            case 1:
+                frase = "La fortuna ti sorride oggi. Sei bellissima ricordatelo sempre 🥰❤️";
+                break;
+            case 2:
+                frase = "Sei forte, intelligente e determinata. Non c'è nulla che tu non possa affrontare. Ti amoooooo 🐙❤️";
+                break;
+            case 3:
+                frase = "Ricorda che sei capace di superare qualsiasi ostacolo che incontri sulla strada. Metticela tutta!! 😊❤️";
+                break;
+            case 4:
+                frase = "Credo in te amore c'è la farai sicuramente. Sei la più brava del mondo 🤪❤️";
+                break;
+            case 5:
+                frase = "Sii gentile con te stesso oggi. Ti voglio bene 🤪❤️";
+                break;
+            case 6:
+                frase = "Sei bravissima amore non vedo l'ora di vedertiii. Continua così 🦀❤️";
+                break;
+            case 7:
+                frase = "Fai attenzione oggi. Sei l'amore della mia vita 🐙❤️";
+                break;
+            case 8:
+                frase = "Ti ammiro per il tuo impegno e la tua perseveranza. Continua a seguire i tuoi sogni. Sei la mia super Infermiera ❤️";
+                break;
+            case 9:
+                frase = "Sono qui per sostenerti in ogni passo del tuo percorso. Non sei mai sola 🦑❤️";
+                break;
+            case 10:
+                frase = "Non smettere mai di credere in te stessa. Sei capace di raggiungere grandi cose. 😘❤️";
+                break;
+            default:
+                frase = "Sei fortissima bubaaaaaaaaaa continua così ❤️❤️";
+                break;
+        }
+        
+        // Mostriamo il numero casuale generato nella pagina
+        document.getElementById("numeroCasuale").innerHTML = "Il numero casuale generato è: " + numeroCasuale + "<br>" + "<span style='color:red'>" + frase + "</span>";
+    }
+</script>
+</head>
+<body>
+    <h2 style="text-align: center; text-shadow: 0cap; color: brown; font-size: xx-large;">Generatore di numeri casuali</h2>
+    <p style="text-align: center; text-shadow: 0 0; color: brown; font-size: x-large;">Inserisci il limite superiore:</p>
+    <input type="number" id="limiteSuperiore" min="1" value="5" style="text-align: center; text-shadow: 0 0; color: brown; font-size: xx-large;">
+    <button onclick="generaNumeroCasuale()"; style="text-align: center; text-shadow: 0 0; color: brown; font-size: xx-large;">Genera numero casuale</button>
+    <p id="numeroCasuale" <input type="number" id="limiteSuperiore" min="1" value="5" style="text-align: center; text-shadow: 0 0; color: brown; font-size: x-large;">
+        ></p>
+</body>
+</html>
