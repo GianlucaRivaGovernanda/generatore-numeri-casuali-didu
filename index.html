@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💖 Messaggi Casuali per Te 💖</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            padding: 20px;
+        }
+        h2 {
+            color: white;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        p {
+            font-size: 1.5em;
+            color: white;
+        }
+        input, button {
+            font-size: 1.2em;
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            margin-top: 10px;
+        }
+        input {
+            width: 100px;
+            text-align: center;
+        }
+        button {
+            background-color: #ff6f61;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #ff3b3b;
+        }
+        #numeroCasuale {
+            font-size: 1.8em;
+            margin-top: 20px;
+            color: white;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 15px;
+            display: inline-block;
+        }
+    </style>
+    <script>
+        function generaNumeroCasuale() {
+            var limiteSuperiore = parseInt(document.getElementById("limiteSuperiore").value);
+            
+            if (isNaN(limiteSuperiore) || limiteSuperiore <= 0) {
+                document.getElementById("numeroCasuale").innerHTML = "Inserisci un numero valido!";
+                return;
+            }
+
+            var numeroCasuale = Math.floor(Math.random() * limiteSuperiore) + 1;
+            var numeroCasuale2 = Math.floor(Math.random() * 10);  // Indice da 0 a 9
+            
+            var frasi = [
+                "La fortuna ti sorride oggi. Sei bellissima, ricordalo sempre! 🥰❤️",
+                "Sei forte, intelligente e determinata. Non c'è nulla che tu non possa affrontare! Ti amoooooo 🐙❤️",
+                "Ricorda che sei capace di superare qualsiasi ostacolo che incontri sulla strada. Metticela tutta!! 😊❤️",
+                "Credo in te amore, ce la farai sicuramente. Sei la più brava del mondo 🤪❤️",
+                "Sii gentile con te stessa oggi. Ti voglio bene 🤪❤️",
+                "Sei bravissima amore, non vedo l'ora di vederti! Continua così 🦀❤️",
+                "Fai attenzione oggi. Sei l'amore della mia vita 🐙❤️",
+                "Ti ammiro per il tuo impegno e la tua perseveranza. Continua a seguire i tuoi sogni! Sei la mia super infermiera ❤️",
+                "Sono qui per sostenerti in ogni passo del tuo percorso. Non sei mai sola 🦑❤️",
+                "Non smettere mai di credere in te stessa. Sei capace di raggiungere grandi cose! 😘❤️"
+            ];
+
+            // Mostriamo il numero generato e il messaggio
+            document.getElementById("numeroCasuale").innerHTML = 
+        "Il numero generato è: <b>" + numeroCasuale + "</b><br><br><i>" + frasi[numeroCasuale2] + "</i>";
+    }
+
+    </script>
+</head>
+<body>
+    <h2>💖 Numeri casuali per il didu 💖</h2>
+    <p>Inserisci il limite superiore:</p>
+    <input type="number" id="limiteSuperiore" min="1" value="5">
+    <br>
+    <button onclick="generaNumeroCasuale()">Genera</button>
+    <br>
+    <p id="numeroCasuale"></p>
+</body>
+</html>
